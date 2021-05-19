@@ -1,0 +1,10 @@
+.usertable {
+  align-self: center;
+  border: solid 1px;
+  margin: 5% auto;
+  color: white;
+}
+tr,
+td {
+  padding: 15px;
+}
