@@ -27,7 +27,7 @@ function App() {
         <button onClick={onClear}>Clear</button>
       </div>
 
-      <DataFetching username="Mr" />
+      <DataFetching username={value} />
     </div>
   );
 }
