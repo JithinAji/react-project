@@ -8,3 +8,7 @@ tr,
 td {
   padding: 15px;
 }
+
+.hide {
+  display: none;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DataFetching.css";
 
-function DataFetching() {
+function DataFetching(props) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -11,13 +11,13 @@ function DataFetching() {
         const result = await axios(
           "https://jsonplaceholder.typicode.com/users"
         );
-        console.log(typeof result.data[0]);
         setUsers(result.data);
       } catch (error) {
         // handle any GET request or response handling errors
         console.log("fetch error");
       }
     };
+
     fetchData();
   }, []);
 
@@ -28,7 +28,7 @@ function DataFetching() {
       <table className="usertable">
         {users &&
           users.map((user) => (
-            <tr>
+            <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.username}</td>
